@@ -21,6 +21,7 @@ rand = "0.7"
 rustracing = "0.3"
 thrift_codec = "0.1"
 trackable = "0.2"
+serde = { version = "1.0", features = ["derive"] }
 
 [dev-dependencies]
 bytecodec = "0.4"

@@ -38,6 +38,7 @@
 use crate::constants;
 use crate::error;
 use crate::{Error, ErrorKind, Result};
+use serde::{Deserialize, Serialize};
 use percent_encoding::percent_decode;
 use rand;
 use rustracing;
@@ -94,7 +95,7 @@ const FLAG_DEBUG: u32 = 0b10;
 /// assert_eq!(id.to_string(), "10000000000000002");
 /// assert_eq!("10000000000000002".parse::<TraceId>().unwrap(), id);
 /// ```
-#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash, Deserialize, Serialize)]
 #[allow(missing_docs)]
 pub struct TraceId {
     pub high: u64,
